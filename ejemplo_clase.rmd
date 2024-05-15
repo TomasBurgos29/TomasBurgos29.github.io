@@ -1,0 +1,32 @@
+---
+title: "Ejemplo de clase"
+author: "Tomás Burgos"
+date: "2024-05-15"
+output: html_document
+---
+Quiero llamar los paquetes para la sesión
+```{r}
+##Llamar paquetes
+require(pacman)
+p_load(rio,tidyverse,mapview)
+
+```
+Ahora quiero 
+```{r,echo=T, eval=T,message=F}
+require(pacman)
+p_load(rio,tidyverse,mapview)
+```
+
+Base de datos:
+```{r, echo=T,eval=T,message=F}
+require(pacman)
+p_load(rio,tidyverse,mapview,osmdata,tmaptools)
+
+##data
+casa<-geocode_OSM("Universidad de los Andes", as.sf=T)
+```
+Ahora voy a pintar el objeto **db** que contiene la geocodificación de `r casa$query`
+`
+```{r}
+mapview(casa)
+```
